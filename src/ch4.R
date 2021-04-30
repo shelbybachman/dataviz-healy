@@ -37,26 +37,6 @@ ggsave(filename = here('fig', 'fig_gdp_vs_year.png'),
        height = 5, width = 8, dpi = 400)
 
 
-# plot religion by region -------------------------------------------------
-
-p_rel_by_region <- ggplot(data = gss_sm %>%
-                              filter(!is.na(religion)),
-                            mapping = aes(x = bigregion,
-                                          fill = religion)) +
-  geom_bar(position = 'dodge',
-           mapping = aes(y = ..prop.., group = religion)) +
-  labs(x = '', y = 'Proportion', fill = 'Religion',
-       title = 'Religious Preference by Census Region',
-       caption = 'Source: 2016 General Social Survey.') +
-  scale_fill_brewer(type = 'qual', palette = 'Set2') +
-  theme_minimal() +
-  theme(text = element_text(family = 'Fira Sans'))
-
-ggsave(filename = here('fig', 'fig_rel_by_region.png'),
-       plot = p_rel_by_region,
-       height = 4, width = 8, dpi = 400)
-
-
 # plot county areas by state ----------------------------------------------
 
 p_county_areas <- ggplot(data = midwest,

@@ -90,6 +90,6 @@ p_pop_vs_electoral <- ggplot(data = elections_historic,
 
 ggsave(filename = here('fig', 'fig_pop_vs_electoral.png'),
        plot = p_pop_vs_electoral,
-       height = 4, width = 8, dpi = 400)
+       height = 6, width = 8, dpi = 400)
 
 
